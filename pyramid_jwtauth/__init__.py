@@ -24,7 +24,7 @@ import functools
 from datetime import datetime
 from calendar import timegm
 
-from zope.interface import implementer
+from zope.interface import implementer, implements
 
 from pyramid.interfaces import IAuthenticationPolicy
 from pyramid.security import Everyone, Authenticated
@@ -37,7 +37,6 @@ import jwt
 from .utils import parse_authz_header, normalize_request_object
 
 
-@implementer(IAuthenticationPolicy)
 class JWTAuthenticationPolicy(object):
     """Pyramid Authentication Policy implementing JWT Access Auth.
 
@@ -104,6 +103,8 @@ class JWTAuthenticationPolicy(object):
     The library takes either a master_secret or private_key/public_key pair.
     In the later case the algorithm must be an RS* version.
     """
+
+    implements(IAuthenticationPolicy)
 
     # The default value of master_secret is None, which will cause the library
     # to generate a fresh secret at application startup.
