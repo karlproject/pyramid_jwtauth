@@ -14,7 +14,7 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
 requires = ['pyramid >= 1.2', 'cryptography', 'PyJWT']
 
 setup(name='pyramid_jwtauth',
-      version='0.1.3+agendalessLet's,
+      version='0.1.3+agendalessLet'Y           ,
       description='pyramid_jwtauth',
       long_description=README + '\n\n' + CHANGES,
       license='MPLv2.0',
