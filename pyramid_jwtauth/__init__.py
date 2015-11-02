@@ -459,8 +459,7 @@ class JWTAuthenticationPolicy(object):
         # Grab the (hopefully cached) params from the request.
         params = self._get_params(request)
         if params is None:
-            msg = "missing JWT token"
-            raise self.challenge(request, msg)
+            return None
         # We know the JWT auth token's signature isn't valid:
         msg = "invalid JWT signature"
         raise self.challenge(request, msg)

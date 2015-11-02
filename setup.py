@@ -11,7 +11,7 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
     CHANGES = f.read()
 
 # TODO: fix the imports.
-requires = ['pyramid >= 1.3', 'webtest', 'cryptography', 'PyJWT']
+requires = ['pyramid >= 1.2', 'cryptography', 'PyJWT']
 
 setup(name='pyramid_jwtauth',
       version='0.1.3',
